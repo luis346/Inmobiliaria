@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">Contacto</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Tu nombre">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" placeholder="tu@email.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" rows="4" placeholder="Tu mensaje"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        <div class="col-md-6 text-center">
+            <h4>Información de Contacto</h4>
+            <p><strong>Teléfono:</strong> +52 123 456 7890</p>
+            <p><strong>Correo:</strong> contacto@inmobiliaria.com</p>
+            <p><strong>Dirección:</strong> Calle Ficticia #123, Ciudad, País</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

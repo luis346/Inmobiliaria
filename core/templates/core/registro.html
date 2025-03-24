@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <!-- Enlaces a fuentes y estilos -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    
+
+ 
+    <form method="POST">
+        <h2 class="text-align">Registro</h2>
+        {% csrf_token %}
+        <label for="id_username">Usuario</label>
+        <input type="text" name="username" maxlength="15" required id="id_username">
+
+        <label for="id_email">Email</label>
+        <input type="email" name="email" maxlength="15" required id="id_email">
+
+        <label for="id_password1">Contraseña</label>
+        <input type="password" name="password1" maxlength="15" required id="id_password1">
+
+        
+        <label for="id_password2">Confirmar contraseña</label>
+        <input type="password" name="password2" maxlength="15" required id="id_password2">
+
+        <label for="id_rol">Rol:</label>
+        <select name="rol" id="id_rol">
+            
+        </select>
+
+
+        
+
+        
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+    <title>Panel de Propiedades</title>
+
+<body>
+    <div class="container mt-5">
+        <h2>Panel de Administración</h2>
+        <a href="{% url 'agregar_propiedad' %}" class="btn btn-success mb-3">Agregar Propiedad</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Título</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for propiedad in propiedades %}
+                <tr>
+                    <td><img src="{{ propiedad.imagen.url }}" alt="{{ propiedad.titulo }}" width="100"></td>
+                    <td>{{ propiedad.titulo }}</td>
+                    <td>${{ propiedad.precio }}</td>
+                    <td>
+                        <a href="{% url 'eliminar_propiedad' propiedad.id %}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+{% endblock %}

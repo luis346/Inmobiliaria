@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <h1>Lista de Propiedades</h1>
+    <ul>
+        {% for propiedad in propiedades %}
+            <li>{{ propiedad.titulo }} - ${{ propiedad.precio }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
