@@ -14,11 +14,12 @@ def registro(request):
     if request.method == "POST":
         form = RegistroForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect("login")
+            user = form.save()  # Guarda el usuario creado
+            login(request, user)  # Realiza el login automáticamente
+            return redirect("login")  # Redirige al inicio de sesión
     else:
         form = RegistroForm()
+    
     return render(request, "core/registro.html", {"form": form})
 
 def iniciar_sesion(request):
